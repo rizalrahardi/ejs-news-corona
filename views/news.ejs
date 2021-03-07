@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs') %>
+  <body>
+    <%- include('partials/navbar.ejs') %>
+    <div class="container">
+      <h1 style="margin-top: 20px">news</h1>
+      <div class="row">
+        <% news.forEach(data => { %>
+          <div class="col-4">
+            <div class="card" style="min-height: 500px; margin-bottom: 15px;">
+            <img src="<%= data.image.small %> " class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title"><%= data.title %> </h5>
+              <p class="card-text"><%= data.contentSnippet %> </p>
+              <a href="<%= data.link %> " class="btn btn-primary" target="blank">Lebih lanjut</a>
+            </div>
+            </div>
+          </div>
+        <% }) %> 
+      </div>
+    </div>
+  </body>
+</html>
